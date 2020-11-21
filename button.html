@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <div id="app">
+    <ul>
+        <li v-for ="name in names" v-text="name"></li>
+    </ul>           
+        
+        <input id="input" type="text" v-model="newname">
+      
+        <button @click="addname">Add Name</button> 
+    </div>
+      
+
+
+    <script 
+    src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js">
+    </script>
+
+<script>
+    var app = new Vue ({
+    el: '#app',
+    data: {
+        newname: '',
+      names: ['nik','vik']
+   },
+
+    methods: {
+        addname() {
+            this.names.push(this.newname)
+            this.newname ='' ;
+
+        }
+    }
+                /*mounted() {
+               
+                      <button id="button">add name</button>
+
+                       <button v-on:click="addname">Add Name</button> 
+
+
+
+                document.querySelector('#button').addEventListener('click',() => {
+
+                let input = document.querySelector('#input');
+
+                 app.names.push(input.value);
+
+                 input.value = '';
+
+
+            });
+
+
+      }*/
+});
+ 
+
+</script>

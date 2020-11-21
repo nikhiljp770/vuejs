@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css"></link>
+    
+            <style type="text/css">body { padding-top: 40px; }</style>
+        </head>
+    </body>
+        <div id="app" class="container">
+         
+         <modal v-if="showModal" @close="showModal=false">
+             <p>
+                 hiiiiii
+             </p>
+         </modal>
+       
+         <button @click="showModal = true">show Modol</button>
+        </div>
+    <script  src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script src="main.js"></script>
+
+</html>

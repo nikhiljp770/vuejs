@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+        <div id="app">
+            <h1>
+                ALL TASK
+            </h1>
+            
+         <ul>
+             <li v-for="task in task" v-if="task.completed == false" v-text="task.description"></li>
+         </ul>
+            
+         <h1>
+            INCOMPLETE TASK
+        </h1>
+        
+     <ul>
+         <li v-for="task in incompletetasks"  v-text="task.description"></li>
+     </ul>
+        
+        </div>
+
+    <script 
+      src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js">
+    </script>
+
+
+  <script>
+     new Vue ({
+     el: '#app',
+     data: {
+        task:[
+            { description: 'go to store', completed: true},
+            { description: 'bring',completed: false},
+            { description: 'take chocolate',completed: true},
+            { description: 'pay money',completed: false},
+            { description: 'return home',completed: true},
+        ]
+    },
+
+    computed: {
+
+    incompletetasks() {
+          return this.task.filter(task => !task.completed); 
+    
+    }
+}
+ });
+
+  </script>
+
+
